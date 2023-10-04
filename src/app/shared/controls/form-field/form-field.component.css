@@ -1,0 +1,33 @@
+.form-field {
+   padding-bottom: 5px;
+}
+
+.custom-spinner {
+   width: 16px; /* Cambia el ancho según lo desees */
+   height: 16px; /* Cambia la altura según lo desees */
+}
+
+.form-field-label {
+   display: flex;
+   justify-content: space-between;
+}
+
+.form-field-errors {
+   opacity: 0;
+   font-size: 13px;
+   color: red;
+   min-height: 18px;
+}
+.form-field-errors.hasError {
+   opacity: 1;
+}
+
+.form-field__control {
+   display: block;
+}
+
+
+.ng-touched.ng-invalid:is(input, textarea),
+.ng-dirty.ng-invalid:is(input, textarea) {
+   outline: 1px solid red;
+}

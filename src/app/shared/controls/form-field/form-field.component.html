@@ -1,0 +1,50 @@
+
+<div class="form-field">
+
+   <label class="form-field-label">
+      <span>
+         {{ label }}
+         <span *ngIf="required">*</span>
+      </span>
+      <p-progressSpinner *ngIf="isLoadingIcon" styleClass="custom-spinner" strokeWidth="7"></p-progressSpinner>
+   </label>
+
+   <div class="form-field__control">
+      
+      <ng-content></ng-content>
+
+      <div class="form-field-errors" [class.hasError]="hasError()">
+         <!-- <ng-container *ngIf="control && errorKey" [ngSwitch]="errorKey">
+            <span *ngSwitchCase="'min'">Minimo {{ control.errors ? control.errors[errorKey].min : null }}</span>
+            <span *ngSwitchCase="'max'">Maximo {{ control.errors ? control.errors[errorKey].min : null }}</span>
+            <span *ngSwitchCase="'required'">Este campo es obligatorio</span>
+            <span *ngSwitchCase="'email'">El email no valido.</span>
+            <span *ngSwitchCase="'requiredtrue'">Este campo es requerido</span>
+            <span *ngSwitchCase="'minlength'">Cantidad caracteres minima {{ control.errors ? control.errors[errorKey].requiredLength : null }}</span>
+            <span *ngSwitchCase="'maxlength'">Cantidad caracteres maxima {{ control.errors ? control.errors[errorKey].requiredLength : null }}</span>
+            <span *ngSwitchCase="'pattern'">
+            <span *ngIf="patternError">{{ patternError }}</span>
+            <span *ngIf="!patternError">la expresion regular no es valida</span>
+            </span>
+         </ng-container> -->
+
+         <ng-container *ngIf="control.invalid"[ngSwitch]="true">
+            <span *ngSwitchCase="control.hasError('required')">
+               Este campo es obligatorio
+            </span>
+            <span *ngSwitchCase="control.hasError('email')">
+               Este email no es valido
+            </span>
+            <span *ngSwitchCase="control.hasError('minlength')">
+               Este campo debe tener al menos {{ control.getError('minlength').requiredLength }} caracteres.
+            </span>
+            <span *ngSwitchCase="control.hasError('min')">
+               El valor mínimo permitido es {{ control.getError('min').min }}
+            </span>
+            <span *ngSwitchCase="control.hasError('max')">
+               El valor máximo permitido es {{ control.getError('max').max }}
+            </span>
+         </ng-container>
+      </div>
+   </div>
+</div>

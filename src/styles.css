@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+* {
+   box-sizing: border-box;
+}
+
+html {
+   height: 100%;
+   font-size: 14px;
+}
+
+body {
+   font-family: var(--font-family);
+   color: var(--text-color);
+   background-color: var(--surface-ground);
+   margin: 0;
+   padding: 0;
+   min-height: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+   text-decoration: none;
+   color: var(--primary-color);
+}
+
+.layout-wrapper {
+   min-height: 100vh;
+   /* background-color: #303030; */
+}
+
+/* topbar */
+.layout-topbar {
+   position: fixed;
+   height: 4rem;
+   z-index: 997;
+   left: 0;
+   top: 0;
+   width: 100%;
+   padding: 0 2rem;
+   background-color: var(--surface-card);
+   display: flex;
+   align-items: center;
+   box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+}
+.layout-topbar-logo {
+   display: flex;
+   align-items: center;
+   color: var(--surface-900);
+   font-size: 1.5rem;
+   font-weight: 500;
+   width: 300px;
+   /* background-color: red; */
+}
+.layout-topbar-menu {
+   margin: 0 0 0 auto;
+   padding: 0;
+   list-style: none;
+   display: flex;
+}
+/* topbar */
+
+/* SIDEBAR */
+.layout-sidebar {
+   position: fixed;
+   width: 300px;
+   height: calc(100vh - 4rem);
+   /* z-index: 999; */
+   /* overflow-y: auto; */
+   /* user-select: none; */
+   top: 4rem;
+   left: 0;
+   background-color: white;
+   padding: 0.5rem;
+}
+/* SIDEBAR */
+
+/* LAYOUT MAIN CONTAINER */
+.layout-main-container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   justify-content: space-between;
+   padding: 5rem 1rem 1rem 1rem;
+   margin-left: 300px;
+}
+.layout-main {
+   flex: 1 1 auto;
+   background-color: white;
+   padding: 1rem;
+}
+/* LAYOUT MAIN CONTAINER */
